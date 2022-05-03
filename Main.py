@@ -57,8 +57,8 @@ def step(PerfectPairs, NumberOfCC, CorrectCouples, IncorrectCouples, week):
     font=pygame.font.SysFont('arial', 50)
     #draws initial Circles and numbers
     for i in range(0,8):
-        pygame.draw.circle(screen,(0,0,0), [40+i*60, 150], 25, 2)
-        pygame.draw.circle(screen,(0,0,0), [40+i*60, 350], 25, 2)
+        pygame.draw.circle(screen,(0,0,0), [40+i*60, 150], 30, 2)
+        pygame.draw.circle(screen,(0,0,0), [40+i*60, 350], 30, 2)
         
         text= font.render(str(i+1), True, (0,0,0))
         textrect=text.get_rect()
@@ -102,7 +102,7 @@ def step(PerfectPairs, NumberOfCC, CorrectCouples, IncorrectCouples, week):
                 color=gold
             else:
                 color=black
-            pygame.draw.circle(screen, color, [40+i*55,50+250*c],25,2)
+            pygame.draw.circle(screen, color, [40+i*55,50+250*c],30,2)
             
             if res[0][1+5*c]==res[4][1]:
                 if res[4][2]:
@@ -113,7 +113,7 @@ def step(PerfectPairs, NumberOfCC, CorrectCouples, IncorrectCouples, week):
                 color=gold
             else:
                 color=black
-            pygame.draw.circle(screen, color, [200+i*55,50+250*c],25,2)
+            pygame.draw.circle(screen, color, [200+i*55,50+250*c],30,2)
             
             if res[0][2+5*c]==res[4][1]:
                 if res[4][2]:
@@ -124,7 +124,7 @@ def step(PerfectPairs, NumberOfCC, CorrectCouples, IncorrectCouples, week):
                 color=gold
             else:
                 color=black
-            pygame.draw.circle(screen, color, [360+i*55,50+250*c],25,2)
+            pygame.draw.circle(screen, color, [360+i*55,50+250*c],30,2)
             
             text= font.render(str(res[0][5*c][i]), True, (0,0,0))
             textrect=text.get_rect()
@@ -151,18 +151,18 @@ def step(PerfectPairs, NumberOfCC, CorrectCouples, IncorrectCouples, week):
             color=gold
         else:
             color=black
-        pygame.draw.circle(screen, color, [120+i*55,175],25,2)
+        pygame.draw.circle(screen, color, [120+i*55,175],30,2)
         
         if res[0][4]==res[4][1]:
             if res[4][2]:
                 color=blue
             else:
                 color=red
-        elif res[0][3] in res[2]:
+        elif res[0][4] in res[2]:
             color=gold
         else:
             color=black
-        pygame.draw.circle(screen, color, [280+i*55,175],25,2)
+        pygame.draw.circle(screen, color, [280+i*55,175],30,2)
         
         text4= font.render(str(res[0][3][i]), True, (0,0,0))
         text4rect=text4.get_rect()
@@ -190,7 +190,6 @@ def step(PerfectPairs, NumberOfCC, CorrectCouples, IncorrectCouples, week):
             if event.type==pygame.MOUSEBUTTONUP:
                 pos= pygame.mouse.get_pos()
                 if pos[1]>400:
-                    pygame.quit()
                     running=False
             if event.type==pygame.QUIT:
                 pygame.quit()
@@ -241,4 +240,5 @@ def algo1(PerfectPairs,NumberOfCC, CorrectCouples, IncorrectCouples):
 #runs the program
 if __name__=='__main__':
     game()
+    #nogame()
 
